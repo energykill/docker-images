@@ -91,7 +91,7 @@ if [ "${METAMOD_STOP_UPDATE:-0}" -eq 0 ]; then
         echo "[INFO] MetaMod already installed, checking for updates..."
         CURRENT_VERSION=$(cat ${METAMOD_VERSION_FILE})
         if [ "$CURRENT_VERSION" != "$METAMOD_LATEST_VERSION" ]; then
-            echo "[INFO] Newer version Metamod available: $SWIFTLY_VERSION (current: $CURRENT_VERSION)"
+            echo "[INFO] Newer version Metamod available: $METAMOD_LATEST_VERSION (current: $CURRENT_VERSION)"
             rm -rf ${METAMOD_DIR}
             curl -sSL "${METAMOD_BASE_URL}${METAMOD_LATEST_URL}" -o metamod.tar.gz
             tar -xzf metamod.tar.gz -C "${GAME_DIR}/"
